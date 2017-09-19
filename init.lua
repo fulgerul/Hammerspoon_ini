@@ -75,7 +75,7 @@ local battery = {
 	title =  "Battery Status",
 	sound = "Sosumi",
 	min = 50,
-	showPercentage = true
+	showPercentage = false -- Bugged, show multiple copies..
 }
 
 
