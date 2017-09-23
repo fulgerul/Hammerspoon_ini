@@ -20,7 +20,7 @@ function reloadConfig(paths)
 	end
 
 	hs.reload()
-	end
+end
 
 configFileWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig)
 configFileWatcher:start()
@@ -47,7 +47,7 @@ local function directoryLaunchKeyRemap(mods, key, dir)
 	end)
 end
 
-directoryLaunchKeyRemap({'alt','shift'}, "E", "/Volumes")
+directoryLaunchKeyRemap({'cmd','shift'}, "E", "/Volumes")
 
 -- Cmd + Tab
 switcher = require "hs.window.switcher"
@@ -64,6 +64,10 @@ switcher = switcher.new(filter.new():setDefaultFilter{}, {
 })
 hs.hotkey.bind('alt', 'tab', function() switcher:next() end)
 hs.hotkey.bind('alt-shift', 'tab', function() switcher:previous() end)
+
+-- ALT+0 to }
+-- (opt + keycode 9)
+hs.hotkey.bind({'alt'}, '0', function()  hs.eventtap.keyStroke({"alt"}, 'SPACE') end)
 
 ---- Battery
 local imagePath =  os.getenv("HOME") .. '/.hammerspoon/img/';
