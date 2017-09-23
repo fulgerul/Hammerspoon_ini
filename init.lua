@@ -66,8 +66,12 @@ hs.hotkey.bind('alt', 'tab', function() switcher:next() end)
 hs.hotkey.bind('alt-shift', 'tab', function() switcher:previous() end)
 
 -- ALT+0 to }
--- (opt + keycode 9)
-hs.hotkey.bind({'alt'}, '0', function()  hs.eventtap.keyStroke({"alt"}, 'SPACE') end)
+-- (opt + shift + keycode 9)
+--hs.hotkey.bind({'alt'}, '0',function() hs.eventtap.keyStroke({"alt","shift"}, '9') end)
+
+-- ALT+7 to {
+-- (opt + shift + keycode 8)
+--hs.hotkey.bind({'alt'}, '7',function() hs.eventtap.keyStroke({"alt","shift"}, '8') end)
 
 ---- Battery
 local imagePath =  os.getenv("HOME") .. '/.hammerspoon/img/';
